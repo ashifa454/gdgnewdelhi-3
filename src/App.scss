@@ -1,0 +1,102 @@
+.App {
+  max-width: 800px;
+  margin: auto;
+
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+  .tab1 {
+    width: 60%;
+    float: left;
+
+    .list {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      .input-group {
+        input {
+          height: 20px;
+          width: 180px;
+          outline: none;
+          border: none;
+        }
+
+        select {
+          height: 25px;
+        }
+
+        margin-top: 5px;
+        margin-bottom: 5px
+      }
+
+      button {
+        height: 30px;
+        width: 200px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    }
+
+    .actions {
+      button {
+        height: 30px;
+        width: 180px;
+      }
+    }
+  }
+
+  .tab2 {
+    width: 40%;
+    float: left;
+
+    .content {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      text-align: center;
+      input{
+        height: 30px;
+        width: 100%;
+        border:none;
+        outline: none;
+      }
+      button{
+        height: 30px;
+        font-size: 18px;
+        width: 40%;
+      }
+    }
+  }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
