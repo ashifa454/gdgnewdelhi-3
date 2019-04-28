@@ -19,12 +19,14 @@
         input {
           height: 20px;
           width: 180px;
+          padding: 5px;
           outline: none;
           border: none;
         }
 
         select {
           height: 25px;
+          margin: 5px;
         }
 
         margin-top: 5px;
@@ -32,7 +34,10 @@
       }
 
       button {
-        height: 30px;
+        border-radius: 15px;
+        background: bisque;
+        border: 3px solid turquoise;
+        height: 40px;
         width: 200px;
         font-size: 20px;
         text-transform: uppercase;
@@ -41,8 +46,11 @@
 
     .actions {
       button {
-        height: 30px;
         width: 180px;
+        border-radius: 15px;
+        background: bisque;
+        border: 3px solid turquoise;
+        height: 40px;
       }
 
       .stats {
@@ -65,12 +73,16 @@
         width: 100%;
         border: none;
         outline: none;
+        padding: 5px;
       }
-
-      button {
-        height: 30px;
+      button{
         font-size: 18px;
         width: 40%;
+        border-radius: 15px;
+        background: bisque;
+        border: 3px solid turquoise;
+        height: 40px;
+        margin: 15px;
       }
     }
   }
