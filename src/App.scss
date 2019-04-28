@@ -52,6 +52,10 @@
         border: 3px solid turquoise;
         height: 40px;
       }
+
+      .stats {
+        color:white;
+      }
     }
   }
 
@@ -63,10 +67,11 @@
       padding-top: 30px;
       padding-bottom: 30px;
       text-align: center;
-      input{
+
+      input {
         height: 30px;
         width: 100%;
-        border:none;
+        border: none;
         outline: none;
         padding: 5px;
       }

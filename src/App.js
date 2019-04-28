@@ -15,13 +15,14 @@ class App extends React.Component {
       data: [],
       query: '',
       result: '',
+      progress: {}
     }
   }
   componentDidMount() {
     ModelRef.on('value', (snapshot) => {
       const data = snapshot.val();
       net.fromJSON(JSON.parse(data.model));
-      toast("Its ready")
+      toast.success("Base Model is Ready for use")
     })
   }
   infer = () => {
@@ -37,12 +38,20 @@ class App extends React.Component {
       data,
     }));
     w.onmessage = (message) => {
-      const net = JSON.parse(message.data);
-      ModelRef.set({
-        model: JSON.stringify(net),
-      }, () => {
-        toast("Data is Ready")
-      })
+      const data = JSON.parse(message.data);
+      switch (data.type) {
+        case 'PROGRESS':
+          this.setState({ progress: data.stats })
+          break;
+        case 'RESULT':
+          const { net } = data;
+          ModelRef.set({
+            model: JSON.stringify(net),
+          }, () => {
+            toast.success("Training is Completed")
+          })
+          break;
+      }
     }
   }
   handleAddItem = () => {
@@ -67,7 +76,7 @@ class App extends React.Component {
     this.setState({ data });
   }
   render() {
-    const { data, result, query } = this.state;
+    const { data, result, query, progress } = this.state;
     return (
       <div className="App" >
         <h1>ML EXPLORER</h1>
@@ -92,6 +101,7 @@ class App extends React.Component {
           </div>
           <div className="actions">
             {data.length > 0 && <button onClick={this.trainModelWithNewData}>TRAIN</button>}
+            <div className="stats">{JSON.stringify(progress)}</div>
           </div>
         </div>
         <div className="tab2">

@@ -5,11 +5,18 @@ const trainingCode = () => {
         const { data } = JSON.parse(e.data);
         net.train(data, {
             log: true,
-            iterations: 10000,
-            callback: () => {
+            iterations: 100,
+            callback: (stats) => {
+                this.self.postMessage(JSON.stringify({
+                    type: "PROGRESS",
+                    stats
+                }))
             }
         });
-        this.self.postMessage(JSON.stringify(net.toJSON()))
+        this.self.postMessage(JSON.stringify({
+            type: "RESULT",
+            net: net.toJSON()
+        }))
     }
 }
 let code = trainingCode.toString();
