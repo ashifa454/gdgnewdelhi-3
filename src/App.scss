@@ -44,6 +44,10 @@
         height: 30px;
         width: 180px;
       }
+
+      .stats {
+        color:white;
+      }
     }
   }
 
@@ -55,13 +59,15 @@
       padding-top: 30px;
       padding-bottom: 30px;
       text-align: center;
-      input{
+
+      input {
         height: 30px;
         width: 100%;
-        border:none;
+        border: none;
         outline: none;
       }
-      button{
+
+      button {
         height: 30px;
         font-size: 18px;
         width: 40%;
